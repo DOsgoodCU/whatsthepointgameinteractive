@@ -1,0 +1,26 @@
+site_name: Cogeneration-Satellite Index Design and Evaluation
+theme:
+  name: material
+  logo: ""
+
+  features:
+    #- navigation.tabs # uncomment this to make navigation on top
+    - navigation.sections
+    - toc.integrate
+    - navigation.footer
+
+nav:
+- 'index.md'
+- 'game_time.md'
+- 'discuss1.md'
+- 'round2.md'
+- 'discuss2.md'
+- 'round3.md'
+- 'discuss3.md'
+- 'allocate.md'
+- 'insvsavediscuss.md'
+
+extra:
+  analytics:
+    provider: google
+    property: G-YM4PVFJE0F

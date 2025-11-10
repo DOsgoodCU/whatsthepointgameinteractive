@@ -1,0 +1,24 @@
+# Risky Opportunity Discussion Questions
+
+# If it was a good year
+![](good_gum.jpg)
+
+If you drew a blue gum out of the hat, so it was a good year...
+
+- What would have happened to you with the choice you made?
+- What would have happened if you had made the other choice?
+- Do you regret your choice?
+
+# If it was a bad year
+
+![](bad_gum.jpg)
+
+Answer the same questions
+
+- What would have happened to you with the choice you made?
+- What would have happened if you had made the other choice?
+- Do you regret your choice?
+
+## Key point
+There are adaptation choices help increase productivity, but they can be risky to farmers that are making decision under an uncertain climate.  People need to be comfortable with their choices given the odds they face.
+
