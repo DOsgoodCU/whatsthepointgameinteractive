@@ -24,6 +24,10 @@ But first--make your choice!
 
 - **Put your left thumb down if you stay with your current, low productivity package**
 
+Then, look at your thumb, remember what you chose, and fill out this form:
+
+<iframe src="https://ee.kobotoolbox.org/x/mjb1jqiX" width = 100% height="300"></iframe>
+
 We typically add real world prices, etc. to the game
 But that’s no fun in a workshop so we will point you to tools to do that later!
 
