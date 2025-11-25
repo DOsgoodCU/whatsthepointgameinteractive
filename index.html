@@ -413,14 +413,42 @@
 <p>This is an example of an exercise to help farmers, donors, and project partners evaluate if insurance would have value.  It is one use case—many others exist.</p>
 <p>It is intended to catalyze key discussions for investment and adaptation opportunities insurance could de-risk and incentivise, and to provide a quantitative tool for people to evaluate if it is meeting its needs.</p>
 <form id="emailForm" style="margin-top:20px;">
-  <label for="emailInput">Enter your email to begin:</label><br>
-  <input type="email" id="emailInput" name="emailInput" placeholder="your@email.com"
-         style="margin-top:8px; width:280px; padding:6px;" required>
+  <label for="emailInput" style="font-size:18px; font-weight:bold;">Enter your email to begin:</label><br>
+  <input 
+      type="email" 
+      id="emailInput" 
+      name="emailInput" 
+      placeholder="your@email.com"
+      style="
+          margin-top:8px; 
+          width:320px; 
+          padding:10px; 
+          font-size:16px; 
+          border:2px solid #555; 
+          border-radius:6px;
+          background-color:#f9f9f9;
+      "
+      required
+  >
   <br><br>
-  <button type="button" id="saveEmailBtn">Save Email</button>
+  <button 
+      type="button" 
+      id="saveEmailBtn"
+      style="
+          padding:10px 20px; 
+          font-size:16px; 
+          background-color:#007acc; 
+          color:white; 
+          border:none; 
+          border-radius:6px;
+          cursor:pointer;
+      "
+  >
+      Save Email
+  </button>
 </form>
 
-<div id="emailSaved" style="display:none; margin-top:15px;">
+<div id="emailSaved" style="display:none; margin-top:15px; font-size:16px; color:green;">
   Your email has been saved. You may continue to the next section.
 </div>
 
