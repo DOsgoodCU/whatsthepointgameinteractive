@@ -427,6 +427,8 @@
 </li>
 </ul>
 <p>We will randomly draw one of the packages from the hat, and if its red, there was a drought.</p>
+<p>We typically add real world prices, etc. to the game
+But that’s no fun in a workshop so we will point you to tools to do that later!</p>
 <p>But first--make your choice!</p>
 <ul>
 <li>
@@ -437,10 +439,40 @@
 </li>
 </ul>
 <p>Then, look at your thumb, remember what you chose, and fill out this form:</p>
-<iframe src="https://ee.kobotoolbox.org/x/mjb1jqiX" width = 100% height="700"></iframe>
+<div id="noEmailWarning" style="display:none; border: 1px solid #b30000; background:#f8d7da; padding:12px; margin:15px 0;">
+  No email was found. Please return to the first page to enter your email.
+</div>
 
-<p>We typically add real world prices, etc. to the game
-But that’s no fun in a workshop so we will point you to tools to do that later!</p>
+<div id="formContainer" style="display:none; margin-top:20px;">
+  <iframe id="koboFrame"
+          src=""
+          style="width:100%; height:700px; border:1px solid #ccc;">
+  </iframe>
+</div>
+
+<script>
+const email = localStorage.getItem("studentEmail");
+
+// If email is missing, show warning and stop here
+if (!email) {
+    document.getElementById("noEmailWarning").style.display = "block";
+} else {
+
+    // Build the Kobo URL for section 2
+    const baseUrl = "https://ee.kobotoolbox.org/x/{{ extra.kobo_form_id }}";
+    const section = 2;
+
+    const fullUrl = baseUrl + "?this_section=" + section +
+                    "&email=" + encodeURIComponent(email);
+
+    // Load in iframe
+    document.getElementById("koboFrame").src = fullUrl;
+
+    // Show the form
+    document.getElementById("formContainer").style.display = "block";
+}
+</script>
+
 <p><img alt="" src="../hat_gum.png" /></p>
 
 
