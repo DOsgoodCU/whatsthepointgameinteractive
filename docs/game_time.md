@@ -43,10 +43,10 @@ const koboId = "b5CVmfVW";  // Section 1
 let iframeHTML = "";
 
 if (!email) {
-    iframeHTML = "<p>Error: No email provided. Please go back to the start page.</p>";
+    iframeHTML = "<p>Error: No email provided. Please go back to the start page to use this navigation.</p>";
 } else {
 // Example from discuss1.md:
-const koboURL = `https://ee.kobotoolbox.org/x/${koboId}?&d[email]=${encodeURIComponent(email)}&cache=false#theme=plain&hide=saving`;
+const koboURL = `https://ee.kobotoolbox.org/${koboId}?&d[email]=${encodeURIComponent(email)}&cache=false#theme=plain&hide=saving`;
 
 iframeHTML = `
         <iframe 
@@ -78,7 +78,7 @@ if (email) {
     window.continueToDiscuss = function() {
         // Navigate to the next page (discuss1/) and append the email query string
         // The resulting URL will be: discuss1/?email=do2126%40columbia.edu
-        window.location.href = "../discuss1/?email=" + encodeURIComponent(email);
+        window.location.href = "../peoplesinvestments/?email=" + encodeURIComponent(email);
     }
 }
 // --- END NEW CODE ---

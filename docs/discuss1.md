@@ -1,25 +1,5 @@
 # Risky Opportunity Discussion Questions
 
-## Peoples choices
-# Aggregate Investment Decisions
-
-<p id="loading-message">Fetching and calculating results across all submissions...</p>
-
-<div id="results-container">
-    <table id="results-table" style="width: 100%; max-width: 400px; border-collapse: collapse; margin-top: 20px; display: none;">
-        <thead>
-            <tr style="background-color: #f2f2f2;">
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Decision</th>
-                <th style="border: 1px solid #ddd; padding: 12px; text-align: right;">Total Count</th>
-            </tr>
-        </thead>
-        <tbody id="table-body">
-            </tbody>
-        <tfoot id="table-footer">
-            </tfoot>
-    </table>
-</div>
-
 <script>
 // --- CONFIGURATION ---
 // Confirmed working Kobo API endpoint (v2 API)
@@ -102,6 +82,7 @@ fetch(KOBODATA_URL)
 </script>
 
 ![](bad_gum.jpg)
+![](good_gum.jpg)
 
 If you drew a blue gum out of the hat, it was a good year, if you drew a red gum, it was a bad year.
 
@@ -120,7 +101,7 @@ if (!email) {
     iframeHTML = "<p>Error: No email provided. Please go back to the start page.</p>";
 } else {
 // Example from discuss1.md:
-const koboURL = `https://ee.kobotoolbox.org/x/${koboId}?&d[email]=${encodeURIComponent(email)}&cache=false#theme=plain&hide=saving`;
+const koboURL = `https://ee.kobotoolbox.org/${koboId}?&d[email]=${encodeURIComponent(email)}&cache=false#theme=plain&hide=saving`;
     iframeHTML = `
         <iframe 
             src="${koboURL}" 
@@ -141,7 +122,7 @@ if (email) {
                 style="margin-top: 30px; padding: 15px 30px; font-size: 18px; 
                        background-color: #007bff; color: white; border: none; 
                        border-radius: 8px; cursor: pointer;">
-            Continue to Round 2
+            Continue to Next Step
         </button>`;
 
     // Insert the button immediately after the form container
@@ -150,13 +131,9 @@ if (email) {
     // Define the function to navigate and pass the email
     window.continueToRound2 = function() {
         // 2. **CORRECTED NAVIGATION PATH:** Use relative path for local and deployed testing
-        window.location.href = "../round2/?email=" + encodeURIComponent(email);
+        window.location.href = "../peoplesregret/?email=" + encodeURIComponent(email);
     }
 }
 </script>
 
-
-## Key point
-
-There are adaptation choices help increase productivity, but they can be risky to farmers that are making decision under an uncertain climate.  People need to be comfortable with their choices given the odds they face.
 
