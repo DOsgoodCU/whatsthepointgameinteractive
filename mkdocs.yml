@@ -7,7 +7,7 @@ theme:
     #- navigation.tabs # uncomment this to make navigation on top
     - navigation.sections
     - toc.integrate
-    - navigation.footer
+    #- navigation.footer
 
 nav:
 - 'index.md'
@@ -20,7 +20,12 @@ nav:
 - 'allocate.md'
 - 'insvsavediscuss.md'
 
+plugins:
+  - search
+  - macros
+
 extra:
+  kobo_form_id: iusvpk4H
   analytics:
     provider: google
     property: G-YM4PVFJE0F

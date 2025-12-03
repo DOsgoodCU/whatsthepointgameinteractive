@@ -412,6 +412,7 @@
 
 
 <h1 id="game-time">Game Time!</h1>
+<p><img alt="" src="../hat_gum.png" /></p>
 <p>Play to have fun--don’t take this too seriously!</p>
 <p>You are a farmer…</p>
 <p>You have a choice of taking out a loan for quality inputs that would make you much more productive in normal years</p>
@@ -427,6 +428,8 @@
 </li>
 </ul>
 <p>We will randomly draw one of the packages from the hat, and if its red, there was a drought.</p>
+<p>We typically add real world prices, etc. to the game
+But that’s no fun in a workshop so we will point you to tools to do that later!</p>
 <p>But first--make your choice!</p>
 <ul>
 <li>
@@ -437,11 +440,57 @@
 </li>
 </ul>
 <p>Then, look at your thumb, remember what you chose, and fill out this form:</p>
-<iframe src="https://ee.kobotoolbox.org/x/mjb1jqiX" width = 100% height="300"></iframe>
+<div id="form_container"></div>
 
-<p>We typically add real world prices, etc. to the game
-But that’s no fun in a workshop so we will point you to tools to do that later!</p>
-<p><img alt="" src="../hat_gum.png" /></p>
+<script>
+// Extract email from the query string (existing code)
+const urlParams = new URLSearchParams(window.location.search);
+const email = urlParams.get("email");
+
+// Build Kobo URL for section 1 (existing code, ensure &d[email]= syntax for reliability)
+const koboId = "b5CVmfVW";  // Section 1
+let iframeHTML = "";
+
+if (!email) {
+    iframeHTML = "<p>Error: No email provided. Please go back to the start page.</p>";
+} else {
+    // Use the reliable Enketo pre-fill syntax: ?&d[field_name]=value
+    const koboURL = `https://ee.kobotoolbox.org/x/${koboId}?&d[email]=${encodeURIComponent(email)}#theme=plain&hide=saving`;
+    iframeHTML = `
+        <iframe 
+            src="${koboURL}" 
+            width="50%" 
+            height="800" 
+            style="border:none; margin-top:20px;">
+        </iframe>`;
+}
+
+document.getElementById("form_container").innerHTML = iframeHTML;
+
+// --- NEW CODE FOR NAVIGATION ---
+
+if (email) {
+    // 1. Add the "Continue" button HTML after the form
+    const nextButtonHTML = `
+        <button onclick="continueToDiscuss()" 
+                style="margin-top: 30px; padding: 15px 30px; font-size: 18px; 
+                       background-color: #007bff; color: white; border: none; 
+                       border-radius: 8px; cursor: pointer;">
+            Continue to Discussion Questions
+        </button>`;
+
+    // Insert the button immediately after the form container
+    document.getElementById("form_container").insertAdjacentHTML('afterend', nextButtonHTML);
+
+    // 2. Define the function to navigate and pass the email
+    window.continueToDiscuss = function() {
+        // Navigate to the next page (discuss1/) and append the email query string
+        // The resulting URL will be: discuss1/?email=do2126%40columbia.edu
+        window.location.href = "../discuss1/?email=" + encodeURIComponent(email);
+    }
+}
+// --- END NEW CODE ---
+</script>
 
 
 
@@ -468,46 +517,6 @@ But that’s no fun in a workshop so we will point you to tools to do that later
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Whats the point?">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Whats the point?
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../discuss1/" class="md-footer__link md-footer__link--next" aria-label="Next: Risky Opportunity Discussion Questions">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Risky Opportunity Discussion Questions
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -530,7 +539,7 @@ But that’s no fun in a workshop so we will point you to tools to do that later
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "toc.integrate", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "toc.integrate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
