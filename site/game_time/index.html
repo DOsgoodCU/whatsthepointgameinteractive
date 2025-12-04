@@ -486,9 +486,16 @@ But that’s no fun in a workshop so we will point you to tools to do that later
 <div id="game-form">Loading form...</div>
 
 <script>
-    // loadKoboForm('ContainerID', 'EnketoID', 'NextPagePath', 'Height')
-    // ID 'b5CVmfVW' is for Section 1 (Game Time)
-    loadKoboForm('game-form', 'b5CVmfVW', '../peoplesinvestments/', '700px');
+    // Ensure the function exists before calling it
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof loadKoboForm === "function") {
+            // loadKoboForm('ContainerID', 'EnketoID', 'NextPagePath', 'Height')
+            loadKoboForm('game-form', 'b5CVmfVW', '../peoplesinvestments/', '700px');
+        } else {
+            console.error("Error: loadKoboForm is not defined. Check mkdocs.yml extra_javascript.");
+            document.getElementById('game-form').innerHTML = "Error: Form loader script not found.";
+        }
+    });
 </script>
 
 
