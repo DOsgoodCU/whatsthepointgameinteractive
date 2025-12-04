@@ -17,7 +17,5 @@
 
     // 2. Load navigation button
     // This function automatically preserves the email/URL parameters
-    if (typeof loadNavigationButton === 'function') {
         loadNavigationButton('nav-button', '../discuss1/', 'Continue to Discussion');
-    }
 </script>
