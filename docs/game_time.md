@@ -1,86 +1,139 @@
-# Game Time!
+# Risky Opportunity Discussion Questions
 
-![](hat_gum.png)
+<script>
+// --- CONFIGURATION ---
+// Confirmed working Kobo API endpoint (v2 API)
+//const KOBODATA_URL = 'https://kc.kobotoolbox.org/api/v2/assets/a47rybfYeno7GVRDbsdwmK/data/?format=json';
+// --- CONFIGURATION ---
+// We prepend the public CORS proxy URL to bypass browser security restrictions.
+const KOBODATA_URL = 'https://cors-anywhere.herokuapp.com/https://kc.kobotoolbox.org/api/v2/assets/a47rybfYeno7GVRDbsdwmK/data/?format=json';
 
-Play to have fun--don’t take this too seriously!
+// Confirmed field name from the JSON output
+const DATA_FIELD_NAME = 'invest_choice'; 
+// ... rest of your script ...
 
-You are a farmer…
+// Confirmed field name from the JSON output
+const DATA_FIELD_NAME = 'invest_choice'; 
+// The API returns an object with a 'results' array for v2 endpoints
+// --- FETCH AND PROCESS DATA ---
 
-You have a choice of taking out a loan for quality inputs that would make you much more productive in normal years
+document.getElementById("loading-message").style.display = 'block';
 
-But you would lose the farm if there was a drought this year, because you wouldn’t be able to repay the loan
+fetch(KOBODATA_URL)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        let investCount = 0;
+        let dontInvestCount = 0;
+        let totalDecisions = 0;
+        
+        // Loop through all records in the 'results' array
+        data.results.forEach(record => {
+            const choice = record[DATA_FIELD_NAME];
+            
+            // Check for the confirmed values: 'invest' and 'dont_invest'
+            if (choice === 'invest') {
+                investCount++;
+                totalDecisions++;
+            } else if (choice === 'dont_invest') {
+                dontInvestCount++;
+                totalDecisions++;
+            }
+        });
 
-You have a 1 in 5 chance of drought.
+        // --- RENDER TABLE ---
+        const tableBody = document.getElementById("table-body");
+        const tableFooter = document.getElementById("table-footer");
 
-We have 5 packages of gum in my hat. 
+        const investRow = `
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 12px;">Invest</td>
+                <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">${investCount}</td>
+            </tr>`;
+            
+        const dontInvestRow = `
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 12px;">Do Not Invest</td>
+                <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">${dontInvestCount}</td>
+            </tr>`;
+            
+        const totalRow = `
+            <tr style="font-weight: bold; background-color: #e0e0e0;">
+                <td style="border: 1px solid #ddd; padding: 12px;">Total Decisions Recorded</td>
+                <td style="border: 1px solid #ddd; padding: 12px; text-align: right;">${totalDecisions}</td>
+            </tr>`;
 
-- The 4 blue ones represent a year with adequate rainfall
+        tableBody.innerHTML = investRow + dontInvestRow;
+        tableFooter.innerHTML = totalRow;
+        
+        // Hide loading message and show table
+        document.getElementById("loading-message").style.display = 'none';
+        document.getElementById("results-table").style.display = 'table';
+    })
+    .catch(error => {
+        // Display a detailed error message if the API call fails
+        document.getElementById("loading-message").innerHTML = `<p style="color: red;">Failed to load aggregate data. Please verify your Kobo sharing settings and API URL. Error: ${error.message}</p>`;
+        console.error('API Error:', error);
+    });
+</script>
 
-- The 1 red one represents a year with a drought
+![](bad_gum.jpg)
+![](good_gum.jpg)
 
-We will randomly draw one of the packages from the hat, and if its red, there was a drought.
+If you drew a blue gum out of the hat, it was a good year, if you drew a red gum, it was a bad year.
 
-We typically add real world prices, etc. to the game
-But that’s no fun in a workshop so we will point you to tools to do that later!
-
-But first--make your choice!
-
-- **Put your left thumb up if you take the chance**
-
-- **Put your left thumb down if you stay with your current, low productivity package**
-
-Then, look at your thumb, remember what you chose, and fill out this form:
+Ask yourself these questions, and fill in the form
 
 <div id="form_container"></div>
 
 <script>
-// Extract email from the query string (existing code)
 const urlParams = new URLSearchParams(window.location.search);
 const email = urlParams.get("email");
 
-// Build Kobo URL for section 1 (existing code, ensure &d[email]= syntax for reliability)
-const koboId = "b5CVmfVW";  // Section 1
+const koboId = "ezpHZhPP"; // Section 2
 let iframeHTML = "";
 
 if (!email) {
-    iframeHTML = "<p>Error: No email provided. Please go back to the start page to use this navigation.</p>";
+    iframeHTML = "<p>Error: No email provided. Please go back to the start page.</p>";
 } else {
 // Example from discuss1.md:
 const koboURL = `https://ee.kobotoolbox.org/${koboId}?&d[email]=${encodeURIComponent(email)}&cache=false#theme=plain&hide=saving`;
-
-iframeHTML = `
+    iframeHTML = `
         <iframe 
             src="${koboURL}" 
             width="50%" 
-            height="800" 
+            height="900" 
             style="border:none; margin-top:20px;">
         </iframe>`;
 }
 
 document.getElementById("form_container").innerHTML = iframeHTML;
 
-// --- NEW CODE FOR NAVIGATION ---
+// --- NAVIGATION CODE ---
 
 if (email) {
-    // 1. Add the "Continue" button HTML after the form
+    // Add the "Continue" button HTML after the form container
     const nextButtonHTML = `
-        <button onclick="continueToDiscuss()" 
+        <button onclick="continueToRound2()" 
                 style="margin-top: 30px; padding: 15px 30px; font-size: 18px; 
                        background-color: #007bff; color: white; border: none; 
                        border-radius: 8px; cursor: pointer;">
-            Continue to Discussion Questions
+            Continue to Next Step
         </button>`;
 
     // Insert the button immediately after the form container
     document.getElementById("form_container").insertAdjacentHTML('afterend', nextButtonHTML);
     
-    // 2. Define the function to navigate and pass the email
-    window.continueToDiscuss = function() {
-        // Navigate to the next page (discuss1/) and append the email query string
-        // The resulting URL will be: discuss1/?email=do2126%40columbia.edu
-        window.location.href = "../peoplesinvestments/?email=" + encodeURIComponent(email);
+    // Define the function to navigate and pass the email
+    window.continueToRound2 = function() {
+        // 2. **CORRECTED NAVIGATION PATH:** Use relative path for local and deployed testing
+        window.location.href = "../peoplesregret/?email=" + encodeURIComponent(email);
     }
 }
-// --- END NEW CODE ---
 </script>
+
 
