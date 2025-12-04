@@ -1,7 +1,5 @@
 # Game Time!
 
-## 11:51
-
 ![](hat_gum.png)
 
 Play to have fun--don’t take this too seriously!
