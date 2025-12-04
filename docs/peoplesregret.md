@@ -2,7 +2,9 @@
 
 ## Peoples choices are below (once people have chosen)
 
-<img src="../assets/charts/public_regret_chart.png" alt="Regret Chart" style="width: 100%; max-width: 600px; border: 1px solid #ddd; border-radius: 4px;">
+<img src="https://dosgoodcu.github.io/auto-assets/public_regret_chart.png" 
+     alt="Regret Analysis Chart" 
+     style="width: 100%; max-width: 600px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ## Key point
 
