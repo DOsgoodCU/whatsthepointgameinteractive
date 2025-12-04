@@ -233,6 +233,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Game Time!
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -243,6 +255,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1151" class="md-nav__link">
+    <span class="md-ellipsis">
+      11:51
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -412,6 +452,7 @@
 
 
 <h1 id="game-time">Game Time!</h1>
+<h2 id="1151">11:51</h2>
 <p><img alt="" src="../hat_gum.png" /></p>
 <p>Play to have fun--don’t take this too seriously!</p>
 <p>You are a farmer…</p>
@@ -452,11 +493,12 @@ const koboId = "b5CVmfVW";  // Section 1
 let iframeHTML = "";
 
 if (!email) {
-    iframeHTML = "<p>Error: No email provided. Please go back to the start page.</p>";
+    iframeHTML = "<p>Error: No email provided. Please go back to the start page to use this navigation.</p>";
 } else {
-    // Use the reliable Enketo pre-fill syntax: ?&d[field_name]=value
-    const koboURL = `https://ee.kobotoolbox.org/x/${koboId}?&d[email]=${encodeURIComponent(email)}#theme=plain&hide=saving`;
-    iframeHTML = `
+// Example from discuss1.md:
+const koboURL = `https://ee.kobotoolbox.org/${koboId}?&d[email]=${encodeURIComponent(email)}&cache=false#theme=plain&hide=saving`;
+
+iframeHTML = `
         <iframe 
             src="${koboURL}" 
             width="50%" 
@@ -486,7 +528,7 @@ if (email) {
     window.continueToDiscuss = function() {
         // Navigate to the next page (discuss1/) and append the email query string
         // The resulting URL will be: discuss1/?email=do2126%40columbia.edu
-        window.location.href = "../discuss1/?email=" + encodeURIComponent(email);
+        window.location.href = "../peoplesinvestments/?email=" + encodeURIComponent(email);
     }
 }
 // --- END NEW CODE ---
