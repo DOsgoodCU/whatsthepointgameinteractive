@@ -34,3 +34,4 @@ extra:
 
 extra_javascript:
   - javascripts/kobo_loader.js
+
