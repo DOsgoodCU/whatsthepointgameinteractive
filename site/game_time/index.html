@@ -337,11 +337,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../peoplesregrets.md" class="md-nav__link">
+      <a href="../peoplesregret/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    None
+    Any regrets?
     
   </span>
   
@@ -523,57 +523,13 @@ But that’s no fun in a workshop so we will point you to tools to do that later
 </li>
 </ul>
 <p>Then, look at your thumb, remember what you chose, and fill out this form:</p>
-<div id="form_container"></div>
+<!-- Kobo Form Container -->
+<div id="game-form">Loading form...</div>
 
 <script>
-// Extract email from the query string (existing code)
-const urlParams = new URLSearchParams(window.location.search);
-const email = urlParams.get("email");
-
-// Build Kobo URL for section 1 (existing code, ensure &d[email]= syntax for reliability)
-const koboId = "b5CVmfVW";  // Section 1
-let iframeHTML = "";
-
-if (!email) {
-    iframeHTML = "<p>Error: No email provided. Please go back to the start page to use this navigation.</p>";
-} else {
-// Example from discuss1.md:
-const koboURL = `https://ee.kobotoolbox.org/${koboId}?&d[email]=${encodeURIComponent(email)}&cache=false#theme=plain&hide=saving`;
-
-iframeHTML = `
-        <iframe 
-            src="${koboURL}" 
-            width="50%" 
-            height="800" 
-            style="border:none; margin-top:20px;">
-        </iframe>`;
-}
-
-document.getElementById("form_container").innerHTML = iframeHTML;
-
-// --- NEW CODE FOR NAVIGATION ---
-
-if (email) {
-    // 1. Add the "Continue" button HTML after the form
-    const nextButtonHTML = `
-        <button onclick="continueToDiscuss()" 
-                style="margin-top: 30px; padding: 15px 30px; font-size: 18px; 
-                       background-color: #007bff; color: white; border: none; 
-                       border-radius: 8px; cursor: pointer;">
-            Continue to Discussion Questions
-        </button>`;
-
-    // Insert the button immediately after the form container
-    document.getElementById("form_container").insertAdjacentHTML('afterend', nextButtonHTML);
-
-    // 2. Define the function to navigate and pass the email
-    window.continueToDiscuss = function() {
-        // Navigate to the next page (discuss1/) and append the email query string
-        // The resulting URL will be: discuss1/?email=do2126%40columbia.edu
-        window.location.href = "../peoplesinvestments/?email=" + encodeURIComponent(email);
-    }
-}
-// --- END NEW CODE ---
+    // loadKoboForm('ContainerID', 'EnketoID', 'NextPagePath', 'Height')
+    // ID 'b5CVmfVW' is for Section 1 (Game Time)
+    loadKoboForm('game-form', 'b5CVmfVW', '../peoplesinvestments/', '700px');
 </script>
 
 
@@ -627,6 +583,8 @@ if (email) {
     
     
       <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../javascripts/kobo_loader.js"></script>
       
     
   </body>
