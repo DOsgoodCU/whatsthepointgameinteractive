@@ -508,7 +508,7 @@
     }
 
     // 2. Load navigation button
-    // We check if the function exists to prevent errors if the external script isn't loaded
+    // This function automatically preserves the email/URL parameters
     if (typeof loadNavigationButton === 'function') {
         loadNavigationButton('nav-button', '../discuss1/', 'Continue to Discussion');
     }
