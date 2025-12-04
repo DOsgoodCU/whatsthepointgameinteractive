@@ -31,3 +31,6 @@ extra:
   analytics:
     provider: google
     property: G-YM4PVFJE0F
+
+extra_javascript:
+  - javascripts/kobo_loader.js
