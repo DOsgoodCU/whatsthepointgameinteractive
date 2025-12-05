@@ -7,9 +7,18 @@ If you drew a blue gum out of the hat, it was a good year, if you drew a red gum
 
 Ask yourself these questions, and fill in the form
 
-<div id="discuss-form">Loading form...</div>
+<!-- Kobo Form Container -->
+<div id="game-form" style="text-align: left; display: flex; justify-content: flex-start;">Loading form...</div>
 
 <script>
-    // ID 'ezpHZhPP' is for Section 2 (Discussion)
-    loadKoboForm('discuss-form', 'ezpHZhPP', '../round2/', '800px');
+    // Ensure the function exists before calling it
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof loadKoboForm === "function") {
+            // loadKoboForm('ContainerID', 'EnketoID', 'NextPagePath', 'Height')
+            loadKoboForm('game-form', 'ezpHZhPP', '../peoplesregret/', '1100px');
+        } else {
+            console.error("Error: loadKoboForm is not defined. Check mkdocs.yml extra_javascript.");
+            document.getElementById('game-form').innerHTML = "Error: Form loader script not found.";
+        }
+    });
 </script>

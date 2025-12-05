@@ -1,11 +1,9 @@
 # Did you invest?
 
-## Peoples choices are below 
+## Peoples choices are below (as of the timestamp in the figure)
 
-(as of the timestamp in the figure)
-
-<!-- Standard Image Tag with ID for cache-busting -->
-
+<!-- 1. THE IMAGE (Standardized) -->
+<!-- Just set the 'src' here. The script will handle the updating automatically. -->
 <img id="inv-chart" src="https://dosgoodcu.github.io/auto-assets/public_investment_chart.png" alt="Investment Decisions Chart" style="width: 100%; max-width: 600px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 <div id="nav-button"></div>
@@ -14,21 +12,20 @@
 // Wait for the page and external scripts to load fully
 document.addEventListener("DOMContentLoaded", function() {
 
-    // 1. Force fresh image (Cache Busting)
+    // --- STANDARD CHART RELOADER ---
+    // This reads the URL from the image tag above and adds a timestamp
     var img = document.getElementById('inv-chart');
     if (img) {
-        img.src = "https://dosgoodcu.github.io/auto-assets/public_investment_chart.png?t=" + new Date().getTime();
+        var cleanSrc = img.getAttribute('src').split('?')[0]; // Get URL without existing params
+        img.src = cleanSrc + "?t=" + new Date().getTime();    // Add timestamp
     }
 
-    // 2. Load navigation button
-    // Check if the standardized function exists before calling it
+    // --- STANDARD NAVIGATION BUTTON ---
     if (typeof loadNavigationButton === 'function') {
         loadNavigationButton('nav-button', '../discuss1/', 'Continue to Discussion');
     } else {
-        console.error("Error: loadNavigationButton is not defined. Check if your custom javascript file is loaded.");
-        // Optional: fallback text if the button fails
-        var container = document.getElementById('nav-button');
-        if (container) container.innerHTML = "<p style='color:red;'>Error loading navigation. Please refresh.</p>";
+        console.error("Error: loadNavigationButton is not defined.");
+        document.getElementById('nav-button').innerHTML = "<p style='color:red;'>Nav Error</p>";
     }
 });
 </script>

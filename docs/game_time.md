@@ -32,7 +32,7 @@ But first--make your choice!
 Then, look at your thumb, remember what you chose, and fill out this form:
 
 <!-- Kobo Form Container -->
-<div id="game-form">Loading form...</div>
+<div id="game-form" style="text-align: left; display: flex; justify-content: flex-start;">Loading form...</div>
 
 <script>
     // Ensure the function exists before calling it
