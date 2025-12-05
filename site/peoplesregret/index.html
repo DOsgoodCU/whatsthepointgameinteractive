@@ -43,6 +43,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/styles.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -343,15 +345,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#key-point" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key point
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -504,58 +497,32 @@
 
 <h1 id="any-regrets">Any regrets?</h1>
 <h2 id="peoples-choices-are-below-once-people-have-chosen">Peoples choices are below (once people have chosen)</h2>
-<p><img src="https://dosgoodcu.github.io/auto-assets/public_regret_chart.png" 
-     alt="Regret Analysis Chart" 
-     style="width: 100%; max-width: 600px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"></p>
-<h2 id="key-point">Key point</h2>
 <p>There are adaptation choices help increase productivity, but they can be risky to farmers that are making decision under an uncertain climate.  People need to be comfortable with their choices given the odds they face.</p>
+<!-- 1. THE IMAGE (Standardized) -->
+<!-- Just set the 'src' here. The script will handle the updating automatically. -->
+<p><img id="inv-chart" src="https://dosgoodcu.github.io/auto-assets/public_regret_chart.png" alt="Regret Chart" style="width: 100%; max-width: 600px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"></p>
+<div id="nav-button"></div>
+
 <script>
-// this is this is boilerplate navigation code to add at bottom of each page--just change the first non-comment line"
-    // ------------------------------------------------------------------
-    // CONFIGURATION: Edit this line to point to the next Markdown folder/file
-    // Example: "../round2/" or "../conclusion/"
-    const NEXT_PAGE_PATH = "../round2/";
-    // ------------------------------------------------------------------
+// Wait for the page and external scripts to load fully
+document.addEventListener("DOMContentLoaded", function() {
 
-    (function() {
-        // 1. Get the email from the current URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const email = urlParams.get("email");
+    // --- STANDARD CHART RELOADER ---
+    // This reads the URL from the image tag above and adds a timestamp
+    var img = document.getElementById('inv-chart');
+    if (img) {
+        var cleanSrc = img.getAttribute('src').split('?')[0]; // Get URL without existing params
+        img.src = cleanSrc + "?t=" + new Date().getTime();    // Add timestamp
+    }
 
-        // 2. Define the button HTML
-        // You can change the label text 'Continue to Next Section' below if desired
-        const buttonHTML = `
-            <button id="nav-btn"
-                    style="padding: 15px 30px; font-size: 18px;
-                           background-color: #007bff; color: white; border: none;
-                           border-radius: 8px; cursor: pointer; transition: background 0.3s;">
-                Continue to Next Section
-            </button>
-            <p id="nav-error" style="color: red; display: none; margin-top: 10px;">
-                Error: No email address found. Please return to the start.
-            </p>
-        `;
-
-        // 3. Insert the button into the container
-        const navContainer = document.getElementById("navigation-container");
-        if (navContainer) {
-            navContainer.innerHTML = buttonHTML;
-
-            // 4. Add Click Handler
-            document.getElementById("nav-btn").addEventListener("click", function() {
-                if (email) {
-                    // Navigate to the next page, carrying the email parameter forward
-                    window.location.href = NEXT_PAGE_PATH + "?email=" + encodeURIComponent(email);
-                } else {
-                    // Show error if email is missing (prevents broken workflows)
-                    document.getElementById("nav-error").style.display = "block";
-                    // Optional: Disable button
-                    // this.disabled = true;
-                    // this.style.backgroundColor = "#ccc";
-                }
-            });
-        }
-    })();
+    // --- STANDARD NAVIGATION BUTTON ---
+    if (typeof loadNavigationButton === 'function') {
+        loadNavigationButton('nav-button', '../round2/', 'Continue to Discussion');
+    } else {
+        console.error("Error: loadNavigationButton is not defined.");
+        document.getElementById('nav-button').innerHTML = "<p style='color:red;'>Nav Error</p>";
+    }
+});
 </script>
 
 
@@ -611,6 +578,8 @@
       <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="../javascripts/kobo_loader.js"></script>
+      
+        <script src="../javascripts/slide-manager.js"></script>
       
     
   </body>

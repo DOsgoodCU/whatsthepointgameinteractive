@@ -33,5 +33,8 @@ extra:
     property: G-YM4PVFJE0F
 
 extra_javascript:
-  - javascripts/kobo_loader.js
+  - javascripts/slide_manager.js
+  - javascripts/kobo_loader.js # should no longer be necessary now that there is slide-manager.js
 
+extra_css:
+  - stylesheets/styles.css
