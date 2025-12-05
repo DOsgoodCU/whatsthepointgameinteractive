@@ -31,18 +31,9 @@ But first--make your choice!
 
 Then, look at your thumb, remember what you chose, and fill out this form:
 
-<!-- Kobo Form Container -->
-<div id="game-form" style="text-align: left; display: flex; justify-content: flex-start;">Loading form...</div>
-
-<script>
-    // Ensure the function exists before calling it
-    document.addEventListener("DOMContentLoaded", function() {
-        if (typeof loadKoboForm === "function") {
-            // loadKoboForm('ContainerID', 'EnketoID', 'NextPagePath', 'Height')
-            loadKoboForm('game-form', 'b5CVmfVW', '../peoplesinvestments/', '700px');
-        } else {
-            console.error("Error: loadKoboForm is not defined. Check mkdocs.yml extra_javascript.");
-            document.getElementById('game-form').innerHTML = "Error: Form loader script not found.";
-        }
-    });
-</script>
+<div id="slide-config" 
+     data-type="kobo" 
+     data-next="../peoplesinvestments/" 
+     data-kobo-id="b5CVmfVW"
+     data-width="100%">
+</div>
