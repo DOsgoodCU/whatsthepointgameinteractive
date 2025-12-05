@@ -1,6 +1,6 @@
 # Whats the point?
 
-Fri Dec  5 13:00:38 EST 2025
+Fri Dec  5 13:27:51 EST 2025
 
 This is an example of an exercise to help farmers, donors, and project partners evaluate if insurance would have value.  It is one use case—many others exist.
 
