@@ -2,7 +2,7 @@
 
 <img src="hat.jpg" alt="Hat" style="width:500px;">
 
-Fri Dec  5 14:49:11 EST 2025
+Fri Dec  5 14:55:35 EST 2025
 
 This is an example of an exercise to help farmers, donors, and project partners evaluate if insurance would have value.  It is one use case—many others exist.
 
