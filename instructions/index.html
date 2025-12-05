@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../round3/">
-      
-      
-        <link rel="next" href="../allocate/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Imperfect Insurance Discussion Questions - Cogeneration-Satellite Index Design and Evaluation</title>
+        <title>Instructions - Cogeneration-Satellite Index Design and Evaluation</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#imperfect-insurance-discussion-questions" class="md-skip">
+        <a href="#survey" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Imperfect Insurance Discussion Questions
+              Instructions
             
           </span>
         </div>
@@ -370,31 +366,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Imperfect Insurance Discussion Questions
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../discuss3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -404,35 +379,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Points
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -495,23 +441,87 @@
 
 
 
-<h1 id="imperfect-insurance-discussion-questions">Imperfect Insurance Discussion Questions</h1>
-<p>-Are there years in which there was a bad harvest, but no index insurance payout?</p>
-<p>-If you purchased this index insurance contract as protection against a bad harvest, would it help you to plan your investment decisions for the upcoming planting season?</p>
-<p>-Is it enough to just purchase insurance in order to protect yourself from risk? </p>
-<p>-How can you protect yourself during the years when index insurance fails to protect you? </p>
-<p>-What other risk management strategies could you use?</p>
-<p>-Is it useful to have insurance that addresses a big part of the risk, even if it doesnt address all risk?</p>
-<h2 id="key-points">Key Points</h2>
-<p>Insurance is not perfect; there are some risks it will fail to cover.
-Insurance does not have to be perfect in order to be useful; it does need to be good enough for farmers to feel confident in investing.
-Other risk management strategies are usually necessary to address the gaps in insurance. 
-These games can be automatically generated using the indexes and costs for actual local situations, eg output of DESDR crowdsourcing/codesign</p>
-<ul>
-<li>Dr Blakeley led research showing :
-Real world adoption is HIGHER when farmers are trained on errors of the product</li>
-</ul>
-<p><img alt="" src="../ethiopiachildpaperwork.png" /></p>
+<p>Slide Manager Instructions</p>
+<p>This project uses a simplified "Configuration Div" system to handle slide logic (forms, redirects, images, and email persistence). Instead of writing complex HTML/JS in every slide, you simply place one configuration line at the top of your Markdown file.</p>
+<ol>
+<li>Installation</li>
+</ol>
+<p>Ensure the following files are in place:</p>
+<p>JavaScript: docs/javascripts/slide-manager.js</p>
+<p>CSS: docs/stylesheets/styles.css</p>
+<p>Configuration: Update mkdocs.yml:</p>
+<p>extra_css:
+  - stylesheets/styles.css</p>
+<p>extra_javascript:
+  # kobo_loader.js is retained for backwards compatibility
+  - javascripts/kobo_loader.js
+  - javascripts/slide-manager.js</p>
+<ol>
+<li>How to Use</li>
+</ol>
+<p>At the top of your Markdown file (below the YAML frontmatter if you use it), add a single HTML <div> with the ID slide-config. The JavaScript reads this line to determine what to render.</p>
+<p>Type 1: Kobo Form Slide</p>
+<p>Displays a KoboToolbox form. It automatically prefills the user's email (if captured previously) and handles the redirect upon submission.</p>
+<p>Attributes:</p>
+<p>data-type="kobo"</p>
+<p>data-next: Path to the next slide (e.g., ../slide2/ or slide2.html).</p>
+<p>data-kobo-url: The URL of your Kobo form (e.g., https://ee.kobotoolbox.org/x/YourID).</p>
+<p>Example:</p>
+<div id="slide-config" 
+     data-type="kobo" 
+     data-next="../slide3/" 
+     data-kobo-url="[https://ee.kobotoolbox.org/x/aB1cD2eF](https://ee.kobotoolbox.org/x/aB1cD2eF)">
+</div>
+
+<h1 id="survey">Survey</h1>
+<p>Please complete the form below.</p>
+<p>Type 2: Figure Slide</p>
+<p>Displays an image and a "Next" button. It automatically adds a timestamp to the image URL to force a fresh reload (preventing stale cache issues).</p>
+<p>Attributes:</p>
+<p>data-type="figure"</p>
+<p>data-next: Path to the next slide.</p>
+<p>data-img: Path to your image file (e.g., assets/chart.png).</p>
+<p>Example:</p>
+<div id="slide-config" 
+     data-type="figure" 
+     data-next="../slide4/" 
+     data-img="../assets/results_chart.png">
+</div>
+
+<h1 id="results">Results</h1>
+<p>Here is your latest performance graph.</p>
+<p>Type 3: Simple Text Slide</p>
+<p>Displays standard Markdown text with a "Next" button at the bottom.</p>
+<p>Attributes:</p>
+<p>data-type="simple"</p>
+<p>data-next: Path to the next slide.</p>
+<p>Example:</p>
+<div id="slide-config" 
+     data-type="simple" 
+     data-next="../slide2/">
+</div>
+
+<h1 id="information">Information</h1>
+<p>Read this important text. Click the button below when you are done.</p>
+<p>Type 4: Start Slide (Email Entry)</p>
+<p>The entry point. Asks the user for their email, saves it to session storage, and forwards it to the next slide.</p>
+<p>Attributes:</p>
+<p>data-type="start"</p>
+<p>data-next: Path to the first real content slide.</p>
+<p>Example:</p>
+<div id="slide-config" 
+     data-type="start" 
+     data-next="../slide1/">
+</div>
+
+<h1 id="welcome">Welcome</h1>
+<p>Please enter your email to begin the simulation.</p>
+<ol>
+<li>Key Features &amp; Troubleshooting</li>
+</ol>
+<p>Email Persistence: The system checks both the URL (?email=...) and Session Storage. This ensures the email variable is never lost between slides.</p>
+<p>Frame Busting: If a slide is loaded inside a small iframe (common with Kobo redirects), the script automatically forces the top-level window to navigate to the slide.</p>
+<p>Backward Compatibility: This system runs alongside kobo_loader.js. Old slides using <script>loadKoboForm(...)</script> will continue to work, but new slides should use the slide-config method.</p>
 
 
 
