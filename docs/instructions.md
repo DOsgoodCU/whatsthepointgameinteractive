@@ -66,7 +66,7 @@ Example:
 <div id="slide-config" 
      data-type="figure" 
      data-next="../slide4/" 
-     data-img="../assets/results_chart.png">
+     data-img="https://dosgoodcu.github.io/auto-assets/public_investment_chart.png">
 </div>
 
 # Results
