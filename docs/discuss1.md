@@ -8,9 +8,4 @@ If you drew a blue gum out of the hat, it was a good year, if you drew a red gum
 Ask yourself these questions, and fill in the form
 
 
-<div id="slide-config"
-     data-type="kobo"
-     data-next="../peoplesregret/"
-     data-kobo-id="ezpHZhPP"
-     data-width="100%">
-</div>
+<div id="slide-config" data-type="kobo" data-next="../peoplesregret/" data-kobo-id="ezpHZhPP" data-width="100%"> </div>
