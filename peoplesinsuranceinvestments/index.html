@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../peoplesregret/">
+        <link rel="prev" href="../round2/">
       
       
-        <link rel="next" href="../peoplesinsuranceinvestments/">
+        <link rel="next" href="../discuss2/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Insurance and Risky Opportunities - Cogeneration-Satellite Index Design and Evaluation</title>
+        <title>Did you invest? - Cogeneration-Satellite Index Design and Evaluation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#insurance-and-risky-opportunities" class="md-skip">
+        <a href="#did-you-invest" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Insurance and Risky Opportunities
+              Did you invest?
             
           </span>
         </div>
@@ -307,6 +307,27 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../round2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Insurance and Risky Opportunities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -319,29 +340,19 @@
         
       
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
   
   <span class="md-ellipsis">
-    Insurance and Risky Opportunities
+    Did you invest?
     
   </span>
   
 
-      </a>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../peoplesinsuranceinvestments/" class="md-nav__link">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -351,6 +362,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#peoples-choices-are-below-as-of-the-timestamp-in-the-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peoples choices are below (as of the timestamp in the figure)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -476,44 +516,34 @@
 
 
 
-<h1 id="insurance-and-risky-opportunities">Insurance and Risky Opportunities</h1>
-<p><img alt="" src="../drgame.png" /></p>
-<p>Now we will travel back in time to the beginning of the year and start all over.</p>
-<p>This time you have 2 choices</p>
-<p>You could pay money that would provide an insurance payout that would pay off your loan in a bad year, but would cost money even if its not bad.</p>
-<p>Again, you have a 1 in 5 chance of drought.</p>
-<p><strong>The insurance is a financial service, not a gift so you only get as much money in the payment as you put in on average.  That means if you get 5 coins as the insurance payout in the bad year, you will have to pay 1 coin each year, plus any finance fees.</strong></p>
-<p>We have 5 packages of gum in my hat. </p>
-<ul>
-<li>
-<p>The 4 blue ones represent a year with adequate rainfall</p>
-</li>
-<li>
-<p>The 1 red one represents a year with a drought</p>
-</li>
-</ul>
-<p>We will randomly draw one of the packages from the hat, and if its red, there was a drought.</p>
-<p>Now--make two separate choices!</p>
-<p>1) Productive risk</p>
-<ul>
-<li>
-<p><strong>Put your left thumb up if you take the chance</strong></p>
-</li>
-<li>
-<p><strong>Put your left thumb down if you stay with your current, low productivity package</strong></p>
-</li>
-</ul>
-<p>2) Insurance </p>
-<ul>
-<li>
-<p><strong>Put your right thumb up if you buy insurance</strong></p>
-</li>
-<li>
-<p><strong>Put your right thumb down if you do not buy insurance</strong></p>
-</li>
-</ul>
-<p>Now, look at your thumbs, remember what you chose, and fill out this form:</p>
-<div id="slide-config" data-type="kobo" data-next="../peoplesinsuranceinvestments/" data-kobo-id="vEgP43Ue" data-width="100%"> </div>
+<h1 id="did-you-invest">Did you invest?</h1>
+<h2 id="peoples-choices-are-below-as-of-the-timestamp-in-the-figure">Peoples choices are below (as of the timestamp in the figure)</h2>
+<!-- 1. THE IMAGE (Standardized) -->
+<!-- Just set the 'src' here. The script will handle the updating automatically. -->
+<p><img id="inv-chart" src="https://dosgoodcu.github.io/auto-assets/public_investment_chart.png" alt="Investment Decisions Chart" style="width: 100%; max-width: 600px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"></p>
+<div id="nav-button"></div>
+
+<script>
+// Wait for the page and external scripts to load fully
+document.addEventListener("DOMContentLoaded", function() {
+
+    // --- STANDARD CHART RELOADER ---
+    // This reads the URL from the image tag above and adds a timestamp
+    var img = document.getElementById('inv-chart');
+    if (img) {
+        var cleanSrc = img.getAttribute('src').split('?')[0]; // Get URL without existing params
+        img.src = cleanSrc + "?t=" + new Date().getTime();    // Add timestamp
+    }
+
+    // --- STANDARD NAVIGATION BUTTON ---
+    if (typeof loadNavigationButton === 'function') {
+        loadNavigationButton('nav-button', '../discuss1/', 'Continue to Discussion');
+    } else {
+        console.error("Error: loadNavigationButton is not defined.");
+        document.getElementById('nav-button').innerHTML = "<p style='color:red;'>Nav Error</p>";
+    }
+});
+</script>
 
 
 
