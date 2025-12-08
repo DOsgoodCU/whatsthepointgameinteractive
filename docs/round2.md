@@ -1,5 +1,7 @@
 # Insurance and Risky Opportunities
 
+![](drgame.png)
+
 Now we will travel back in time to the beginning of the year and start all over.
 
 This time you have 2 choices
@@ -18,6 +20,7 @@ We have 5 packages of gum in my hat.
 
 We will randomly draw one of the packages from the hat, and if its red, there was a drought.
 
+
 Now--make two separate choices!
 
 1) Productive risk
@@ -32,5 +35,7 @@ Now--make two separate choices!
 
 - **Put your right thumb down if you do not buy insurance**
 
-![](drgame.png)
+Now, look at your thumbs, remember what you chose, and fill out this form:
+
+<div id="slide-config" data-type="kobo" data-next="../peoplesinsuranceinvestments/" data-kobo-id="vEgP43Ue" data-width="100%"> </div>
 

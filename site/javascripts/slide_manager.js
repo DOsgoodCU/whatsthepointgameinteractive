@@ -16,12 +16,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // If no config div is found, do nothing
     if (!config) return;
 
+    // --- SMART PATH FIXER ---
+    // Fixes the "../" issue on GitHub Pages vs Localhost
+    const getResolvedNextUrl = (rawUrl) => {
+        if (!rawUrl) return '';
+        
+        // Only attempt to fix relative paths starting with "../"
+        if (!rawUrl.startsWith('../')) return rawUrl;
+
+        // Check if we are at the "Home" directory of the site
+        const isDirRoot = window.location.pathname.endsWith('/');
+        const pathSegments = window.location.pathname.split('/').filter(p => p && !p.includes('.html'));
+        const isGitHub = window.location.hostname.includes('github.io');
+
+        // Logic:
+        // GitHub Pages Root is usually /RepoName/ (1 segment)
+        // Localhost Root is / (0 segments)
+        // If we are at this root depth, "../" is wrong; it should be "./"
+        const isHome = (isGitHub && pathSegments.length === 1) || (!isGitHub && pathSegments.length === 0);
+
+        if (isDirRoot && isHome) {
+            return rawUrl.replace(/^\.\.\//, './');
+        }
+        return rawUrl;
+    };
+
     // Extract configuration
-    const type = config.dataset.type;       
-    const nextUrlRaw = config.dataset.next; 
+    const type = config.dataset.type;
+    // Apply the fix to the next URL immediately
+    const nextUrl = getResolvedNextUrl(config.dataset.next);
+    
     const imgSource = config.dataset.img;
     
-    // KOBO SPECIFIC: Now using ID instead of full URL, and optional width
+    // KOBO SPECIFIC
     const koboId = config.dataset.koboId; 
     const koboWidth = config.dataset.width || '100%'; 
     
@@ -54,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentEmail = getEmail();
         let targetUrl = url;
 
+        // Note: url is already relative-safe thanks to getResolvedNextUrl
         if (currentEmail) {
             const separator = url.includes('?') ? '&' : '?';
             targetUrl = `${url}${separator}email=${encodeURIComponent(currentEmail)}`;
@@ -85,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const emailInput = document.getElementById('user-email').value;
                 if (emailInput) {
                     saveEmail(emailInput);
-                    goToNext(nextUrlRaw);
+                    goToNext(nextUrl); // Use fixed URL
                 } else {
                     alert("Please enter a valid email address.");
                 }
@@ -93,16 +121,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // TYPE 1: Kobo Form (UPDATED)
+    // TYPE 1: Kobo Form
     else if (type === 'kobo') {
         const email = getEmail();
         
-        // Build the absolute return URL
-        const nextAbsoluteUrl = new URL(nextUrlRaw, window.location.href);
+        // Build the absolute return URL using the FIXED nextUrl
+        const nextAbsoluteUrl = new URL(nextUrl, window.location.href);
         if (email) nextAbsoluteUrl.searchParams.set("email", email);
 
-        // Construct Kobo URL using ID
-        // We add 'hide=saving' to match old functionality
         let finalKoboUrl = `https://ee.kobotoolbox.org/single/${koboId}?hide=saving&return_url=${encodeURIComponent(nextAbsoluteUrl.href)}`;
         
         if (email) {
@@ -125,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        document.getElementById('next-btn').addEventListener('click', () => goToNext(nextUrlRaw));
+        document.getElementById('next-btn').addEventListener('click', () => goToNext(nextUrl));
     }
 
     // TYPE 2: Figure + Button
@@ -143,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        document.getElementById('next-btn').addEventListener('click', () => goToNext(nextUrlRaw));
+        document.getElementById('next-btn').addEventListener('click', () => goToNext(nextUrl));
     }
 
     // TYPE 3: Simple Content
@@ -154,6 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        document.getElementById('next-btn').addEventListener('click', () => goToNext(nextUrlRaw));
+        document.getElementById('next-btn').addEventListener('click', () => goToNext(nextUrl));
     }
 });

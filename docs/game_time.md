@@ -31,9 +31,4 @@ But first--make your choice!
 
 Then, look at your thumb, remember what you chose, and fill out this form:
 
-<div id="slide-config" 
-     data-type="kobo" 
-     data-next="../peoplesinvestments/" 
-     data-kobo-id="b5CVmfVW"
-     data-width="100%">
-</div>
+<div id="slide-config" data-type="kobo" data-next="../peoplesinvestments/" data-kobo-id="b5CVmfVW" data-width="100%"> </div>
