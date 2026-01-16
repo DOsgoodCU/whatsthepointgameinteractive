@@ -1,17 +1,16 @@
 # Imperfect Insurance Discussion Questions
 
+![](ethiopiachildpaperwork.png)
 
--Are there years in which there was a bad harvest, but no index insurance payout?
+If you drew a blue gum out of the hat, it was a good year, if you drew a red gum, it was a bad year.
 
--If you purchased this index insurance contract as protection against a bad harvest, would it help you to plan your investment decisions for the upcoming planting season?
+If it was a bad year, put 2 blue gums in the hat and 1 red gum and redraw to see if the insurance does its job!
 
--Is it enough to just purchase insurance in order to protect yourself from risk? 
+If you drew a blue gum, the insurance worked, if its red, it let you down.
 
--How can you protect yourself during the years when index insurance fails to protect you? 
+Now answer these questions.
 
--What other risk management strategies could you use?
-
--Is it useful to have insurance that addresses a big part of the risk, even if it doesnt address all risk?
+<div id="slide-config" data-type="kobo" data-next="../peoplesinsurance/" data-kobo-id="juTgN3oE" data-width="100%"> </div>
 
 ## Key Points
 Insurance is not perfect; there are some risks it will fail to cover.
@@ -22,5 +21,4 @@ These games can be automatically generated using the indexes and costs for actua
 - Dr Blakeley led research showing :
 Real world adoption is HIGHER when farmers are trained on errors of the product
 
-![](ethiopiachildpaperwork.png)
 

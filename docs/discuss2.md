@@ -1,26 +1,14 @@
 # Insurance and Risky Opportunities Discussion Questions
 
-# If it was a good year
+![](bad_gum.jpg)
 ![](good_gum.jpg)
 
-- If you took a loan for improved seeds, did not purchase insurance and experience a drought, how will you cope?
+If you drew a blue gum out of the hat, it was a good year, if you drew a red gum, it was a bad year.
 
-- What can a farmer do so that she’s less likely to have a bad outcome?
+Think about what choices you made, and answer these questions.
 
-- When would you buy insurance? 
+<div id="slide-config" data-type="kobo" data-next="../peoplesinsurance/" data-kobo-id="wqFd1YVz" data-width="100%"> </div>
 
--Would you buy insurance with high quality or traditional seeds? 
-
--When would you be glad to have bought insurance?
-
--Since the price of the insurance is driven by how often droughts happen, is the insurance worth it at these odds?  Does it make better sense at different oddes (for example 1 out of 7)?  What are ways you could get enough information to answer this question for your farm?
-
-# If it was a bad year
-
-Answer the same questions
-
-![](bad_gum.jpg)
-
-## Key Points
+## Key Point
 Insurance can help make productive decisions less risky but it comes at a cost.
 

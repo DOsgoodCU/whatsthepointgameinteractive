@@ -1,6 +1,6 @@
 # Insurance is not perfect
 
-Now, INSURANCE IS NOT PERFECT!
+![](DRflowers.png)
 
 Some of the drought years when you need insurance, it might not pay out, for example because it assumes different rainfall over they season from what you need.
 
@@ -29,5 +29,6 @@ Make the choices!
 
 - **Put your right thumb down if you do not buy insurance**
 
-![](DRflowers.png)
+Now, look at your thumbs, remember what you chose, and fill out this form:
 
+<div id="slide-config" data-type="kobo" data-next="../peoplesimperfect/" data-kobo-id="TWCor1Cg" data-width="100%"> </div>

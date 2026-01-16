@@ -1,5 +1,7 @@
 # Choosing between Insurance and Savings 
 
+![](smilingHondurasFarmersSophiaFlowers.jpg)
+
 A key part of building an insurance project, or participating in it, 
 is making decisions about how to balance insurance with other complementary
 risk management tools, such as savings.  
@@ -49,5 +51,7 @@ Make the choices!
 
 - **Put your right thumb down if you do not buy insurance**
 
-![](smilingHondurasFarmersSophiaFlowers.jpg)
+<div id="slide-config" data-type="kobo" data-next="../peoplessave/" data-kobo-id="juTgN3oE" data-width="100%"> </div>
+juTgN3oE
+
 

@@ -1,6 +1,6 @@
 # Did you invest?
 
-## Peoples choices are below (as of the timestamp in the figure)
+### Peoples choices are below (as of the timestamp in the figure)
 
 <div id="slide-config"
      data-type="figure"
