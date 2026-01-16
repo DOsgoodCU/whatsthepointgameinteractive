@@ -22,6 +22,8 @@ nav:
 - 'discuss3.md'
 - 'allocate.md'
 - 'insvsavediscuss.md'
+- 'savingspoints.md'
+- 'youdo.md'
 
 plugins:
   - search
