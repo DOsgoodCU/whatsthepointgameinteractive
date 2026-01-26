@@ -10,7 +10,7 @@ If you drew a blue gum, the insurance worked, if its red, it let you down.
 
 Now answer these questions.
 
-<div id="slide-config" data-type="kobo" data-next="../peoplesinsurance/" data-kobo-id="juTgN3oE" data-width="100%"> </div>
+<div id="slide-config" data-type="kobo" data-next="../allocate/" data-kobo-id="juTgN3oE" data-width="100%"> </div>
 
 ## Key Points
 Insurance is not perfect; there are some risks it will fail to cover.

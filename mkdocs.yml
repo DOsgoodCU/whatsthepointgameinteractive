@@ -21,9 +21,11 @@ nav:
 - 'round3.md'
 - 'discuss3.md'
 - 'allocate.md'
+- 'peoplessave.md'
 - 'insvsavediscuss.md'
 - 'savingspoints.md'
 - 'youdo.md'
+- 'bye.md'
 
 plugins:
   - search

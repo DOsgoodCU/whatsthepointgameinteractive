@@ -17,6 +17,7 @@ If it is a drought year, we will draw again from the hat. For the second draw th
 You again have to make two choices, but this time, you should keep in mind that the insurance may let you down!
 
 Make the choices!
+
 1) Productive risk
 
 - **Put your left thumb up if you take the chance**
@@ -31,4 +32,4 @@ Make the choices!
 
 Now, look at your thumbs, remember what you chose, and fill out this form:
 
-<div id="slide-config" data-type="kobo" data-next="../peoplesimperfect/" data-kobo-id="TWCor1Cg" data-width="100%"> </div>
+<div id="slide-config" data-type="kobo" data-next="../discuss3/" data-kobo-id="TWCor1Cg" data-width="100%"> </div>

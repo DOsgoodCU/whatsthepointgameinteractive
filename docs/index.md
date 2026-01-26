@@ -1,5 +1,7 @@
 # Whats the point?
 
+# bit.ly/whatsthepointclass
+
 <img src="hat.jpg" alt="Hat" style="width:500px;">
 
 Last updated: 

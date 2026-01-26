@@ -4,22 +4,10 @@
 
 (as of the timestamp in the figure)
 
-<div id="slide-config"
-     data-type="figure"
-     data-next="../discuss2/"
-     data-img="https://dosgoodcu.github.io/auto-assets/public_insurance_invest_chart.png">
-</div>
 
 <div id="slide-config"
      data-type="figure"
      data-next="../discuss2/"
-     data-img="https://dosgoodcu.github.io/auto-assets/public_insurance_decision_chart.png">
+     data-img="https://dosgoodcu.github.io/auto-assets/public_insurance_dashboard.png">
 </div>
-
-<div id="slide-config"
-     data-type="figure"
-     data-next="../discuss2/"
-     data-img="https://dosgoodcu.github.io/auto-assets/public_insurance_breakdown_chart.png">
-</div>
-
 

@@ -4,7 +4,11 @@
 
 (as of the timestamp in the figure)
 
-NEED FIGURE HERE
+<div id="slide-config"
+     data-type="figure"
+     data-next="../insvsavediscuss/"
+     data-img="https://dosgoodcu.github.io/auto-assets/public_coins_average.png">
+</div>
 
 # Key Points
 Insurance is not perfect; there are some risks it will fail to cover.
