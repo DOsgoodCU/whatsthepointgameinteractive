@@ -1,44 +1,30 @@
 # Slide Instructions
 
-This project uses mkdocs, kobo, and some javascript to make an educational or project decision workflow where output is saved in kobo.  
+This project uses mkdocs, kobo, and some javascript to make an educational or project decision workflow where output is saved in kobo.  It uses a simplified "Configuration Div" system to handle slide logic (forms, redirects, images, and email persistence). Instead of writing complex HTML/JS in every slide, you simply place one configuration line at the bottom of your whatever.md file in docs.
 
 - The email from the email setting form is preserved into the next pages and shows up automatically in the kobo forms if you do things correctly, and the user only submits forms or uses the "go to the next page" button at the bottom.  The javascript takes care of that.  
 - If they navigate using the navigation menu on the left side of the screen, the email persistance may not persist.
 - You can see it as /?email=a@b.c at the end of the url in your browser
 
-In theory, you should be able to set up a new github mkdocs repo and copy this stuff over, and then edit it to what you want.  Y
-ou will also need a kobo account.
+In theory, you should be able to set up a new github mkdocs repo and copy this stuff over, and then edit it to what you want.  
+
+- You will also need a kobo account.
+
+- There are also fancy github actions repositories that house some figures that are generated based on people's responses for some use cases, but this documentation does not cover that.
 
 ## Stuff inside
 
 - the docs folder has the text that people will see, with each page being a file named something.md as well as the image files that these call.
-  - inside of the docs folder is the javascripts folder, which has the code that 
+  - inside of the docs folder is the stylesheets and javascripts folders, which has the code that performs navigation and remembers emails
+  - the javascripts folder might be moved to its own repository in the future, to keep things more consistent, but more complex
 - the koboforms folder has the kobo forms that were used and uploaded into kobo for the workflow
 - the site folder is automatically generated so you dont need to worry about that
-- the mkdocs.yml
-
-This project uses a simplified "Configuration Div" system to handle slide logic (forms, redirects, images, and email persistence). Instead of writing complex HTML/JS in every slide, you simply place one configuration line at the top of your Markdown file.
-
-1. Installation
-
-Ensure the following files are in place:
-
-JavaScript: docs/javascripts/slide-manager.js
-
-CSS: docs/stylesheets/styles.css
-
-Configuration: Update mkdocs.yml:
-
-extra_css:
-  - stylesheets/styles.css
-
-extra_javascript:
-  # kobo_loader.js is retained for backwards compatibility
-  - javascripts/kobo_loader.js
-  - javascripts/slide-manager.js
+- the mkdocs.yml file has
+    - the navigation flow on the left side of the screen.  You need to type in the -'filename.md' in order for each page for it to work.
+    - settings for things like formatting, and where the javascript is
 
 
-2. How to Use
+# How to Use
 
 At the top of your Markdown file (below the YAML frontmatter if you use it), add a single HTML <div> with the ID slide-config. The JavaScript reads this line to determine what to render.
 
