@@ -23,7 +23,7 @@ In theory, you should be able to set up a new github mkdocs repo and copy this s
     - the navigation flow on the left side of the screen.  You need to type in the -'filename.md' in order for each page for it to work.
     - settings for things like formatting, and where the javascript is
 
-# How to Use
+## How to Use
 
 - You make a name.md markdown file for each page of your workflow.
 - the first page should be called index.md
@@ -33,11 +33,35 @@ In theory, you should be able to set up a new github mkdocs repo and copy this s
 - At the bottom of each Markdown file, you send some information to javascript in a single line telling it what you want.  It can be broken into multiple lines if you like that.
   - An example from the index.md, which simply gets peoples emails for future slides is:
 ``` <div id="slide-config" data-type="start" data-next="../disastermandate/"> </div> ```
-- ** Important: You need to tell it the name of your next slide in that line **
+- **Important: You need to tell it the name of your next slide in that line**
   - That means you have to put the slide order both in mkdocs.yml and one at a time in the '<div' part of the md file.
-Type 1: Kobo Form Slide
+
+### Start Slide (Email Entry)
+
+The entry point. Asks the user for their email, saves it to session storage, and forwards it to the next slide.
+
+Example md in this repo: index.md
+
+Attributes:
+
+data-type="start"
+
+data-next: Path to the first real content slide.
+
+Example:
+'''# Beginning
+Lets start!
+
+<div id="slide-config" 
+     data-type="start" 
+     data-next="../slide1/">
+</div>
+'''
+### Kobo Form Slide
 
 Displays a KoboToolbox form. It automatically prefills the user's email (if captured previously) and handles the redirect upon submission.
+
+Example file in this repo: game_time.md
 
 Attributes:
 
@@ -49,19 +73,21 @@ data-kobo-url: The URL of your Kobo form (e.g., https://ee.kobotoolbox.org/x/You
 
 Example:
 
+'''# Questions
+
+Fill out this form
+
 <div id="slide-config" 
      data-type="kobo" 
      data-next="../slide3/" 
      data-kobo-url="[https://ee.kobotoolbox.org/x/aB1cD2eF](https://ee.kobotoolbox.org/x/aB1cD2eF)">
 </div>
-
-# Survey
-Please complete the form below.
-
-
-Type 2: Figure Slide
+'''
+### Figure Slide
 
 Displays an image and a "Next" button. It automatically adds a timestamp to the image URL to force a fresh reload (preventing stale cache issues).
+
+Example file in this repo: peoplesinvestments.md
 
 Attributes:
 
@@ -69,23 +95,24 @@ data-type="figure"
 
 data-next: Path to the next slide.
 
-data-img: Path to your image file (e.g., assets/chart.png).
+data-img: Path to your image file (e.g., assets/chart.png, but it can even be a url).
 
 Example:
+'''# Results
+
+Here is what people put in the forms:
 
 <div id="slide-config" 
      data-type="figure" 
      data-next="../slide4/" 
      data-img="https://dosgoodcu.github.io/auto-assets/public_investment_chart.png">
 </div>
-
-# Results
-Here is your latest performance graph.
-
-
-Type 3: Simple Text Slide
+'''
+Simple Text Slide
 
 Displays standard Markdown text with a "Next" button at the bottom.
+
+Example in this repo: savingspoints.md
 
 Attributes:
 
@@ -94,41 +121,43 @@ data-type="simple"
 data-next: Path to the next slide.
 
 Example:
+'''# Information
+Read this important text. Click the button below when you are done.
 
 <div id="slide-config" 
      data-type="simple" 
      data-next="../slide2/">
 </div>
+'''
 
-# Information
-Read this important text. Click the button below when you are done.
+### Final Slide
 
+Only put the markdown you want, no code.
 
-Type 4: Start Slide (Email Entry)
-
-The entry point. Asks the user for their email, saves it to session storage, and forwards it to the next slide.
-
-Attributes:
-
-data-type="start"
-
-data-next: Path to the first real content slide.
+Example in this repo: bye.md
 
 Example:
+'''#Bye
 
-<div id="slide-config" 
-     data-type="start" 
-     data-next="../slide1/">
-</div>
+Thanks!
+'''
 
-# Welcome
-Please enter your email to begin the simulation.
+### Helpful Markdown
+Other helpful markdown that works in this environment:
+
+-Simplest figure:
+'''![](hat_gum.png)'''
+
+-Fancier figure (if you need to control size)
+xxxx
+
+-Embedded url window (eg a maptool that is active):
+'''<div style="text-align: center; margin-top: 10px;">
+    <iframe id="resizableFrame"
+        src="https://fist.iri.columbia.edu/publications/docs/Madagascar_AA_FLexDashboard_OND_2024_FR/"
+        width="1200" height="1300"
+        style="border:1px solid black; transition: all 0.3s ease;"></iframe>
+</div>'''
 
 
-3. Key Features & Troubleshooting
 
-Email Persistence: The system checks both the URL (?email=...) and Session Storage. This ensures the email variable is never lost between slides.
-
-Frame Busting: If a slide is loaded inside a small iframe (common with Kobo redirects), the script automatically forces the top-level window to navigate to the slide.
-
-Backward Compatibility: This system runs alongside kobo_loader.js. Old slides using <script>loadKoboForm(...)</script> will continue to work, but new slides should use the slide-config method.
