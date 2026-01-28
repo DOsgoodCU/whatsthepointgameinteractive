@@ -59,7 +59,17 @@ Lets start!
 '''
 ### Kobo Form Slide
 
-Displays a KoboToolbox form. It automatically prefills the user's email (if captured previously) and handles the redirect upon submission.
+Displays a KoboToolbox form. It automatically prefills the user's email (if captured previously) and handles the redirect upon submission.  
+
+Some kobo notes (deeper documentation needed).
+- best way to generate a kobo form is to copy and the xlsx files in the koboforms folder
+  - then go to kobo -> forms, click on new, click on upload xlsx form and drag your form there.
+  - Sector is "Education", country is "United States"
+  - **Make sure "Allow submissions to this form without a username and password
+" is switched ON**
+  - click "DEPLOY"
+  - click on the "open" button near the bottom. Then you can look at the URL. https://ee.kobotoolbox.org/x/YourID. That gives you the id for data-kobo-id="YourID"
+
 
 Example file in this repo: game_time.md
 
@@ -80,7 +90,7 @@ Fill out this form
 <div id="slide-config" 
      data-type="kobo" 
      data-next="../slide3/" 
-     data-kobo-url="[https://ee.kobotoolbox.org/x/aB1cD2eF](https://ee.kobotoolbox.org/x/aB1cD2eF)">
+     data-kobo-id="b5CVmfVW">
 </div>
 '''
 ### Figure Slide
@@ -149,7 +159,7 @@ Other helpful markdown that works in this environment:
 '''![](hat_gum.png)'''
 
 -Fancier figure (if you need to control size)
-xxxx
+'''<img src="hat.jpg" alt="Hat" style="width:500px;">'''
 
 -Embedded url window (eg a maptool that is active):
 '''<div style="text-align: center; margin-top: 10px;">
