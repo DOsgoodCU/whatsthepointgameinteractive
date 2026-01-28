@@ -1,4 +1,21 @@
-Slide Manager Instructions
+# Slide Instructions
+
+This project uses mkdocs, kobo, and some javascript to make an educational or project decision workflow where output is saved in kobo.  
+
+- The email from the email setting form is preserved into the next pages and shows up automatically in the kobo forms if you do things correctly, and the user only submits forms or uses the "go to the next page" button at the bottom.  The javascript takes care of that.  
+- If they navigate using the navigation menu on the left side of the screen, the email persistance may not persist.
+- You can see it as /?email=a@b.c at the end of the url in your browser
+
+In theory, you should be able to set up a new github mkdocs repo and copy this stuff over, and then edit it to what you want.  Y
+ou will also need a kobo account.
+
+## Stuff inside
+
+- the docs folder has the text that people will see, with each page being a file named something.md as well as the image files that these call.
+  - inside of the docs folder is the javascripts folder, which has the code that 
+- the koboforms folder has the kobo forms that were used and uploaded into kobo for the workflow
+- the site folder is automatically generated so you dont need to worry about that
+- the mkdocs.yml
 
 This project uses a simplified "Configuration Div" system to handle slide logic (forms, redirects, images, and email persistence). Instead of writing complex HTML/JS in every slide, you simply place one configuration line at the top of your Markdown file.
 
