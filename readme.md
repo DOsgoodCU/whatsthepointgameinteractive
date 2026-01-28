@@ -23,7 +23,6 @@ In theory, you should be able to set up a new github mkdocs repo and copy this s
     - the navigation flow on the left side of the screen.  You need to type in the -'filename.md' in order for each page for it to work.
     - settings for things like formatting, and where the javascript is
 
-
 # How to Use
 
 - You make a name.md markdown file for each page of your workflow.
@@ -31,12 +30,8 @@ In theory, you should be able to set up a new github mkdocs repo and copy this s
 - make sure to edit the mkdocs.yml file to include each page in the workflow.
   - This will be under the nav: line and look something like - 'afilename.md'
   - if you dont do it, most things will work, but the side navigation bar will be broken
-
-
-At the bottom of each Markdown file, you send some information to javascript in a single line telling it what you want.  It can be broken into multiple lines if you like that.
-
-An example from the index.md, which simply gets peoples emails for future slides is:
-
+- At the bottom of each Markdown file, you send some information to javascript in a single line telling it what you want.  It can be broken into multiple lines if you like that.
+  - An example from the index.md, which simply gets peoples emails for future slides is:
 ``` <div id="slide-config" data-type="start" data-next="../disastermandate/"> </div> ```
 
 Type 1: Kobo Form Slide
