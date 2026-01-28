@@ -33,7 +33,8 @@ In theory, you should be able to set up a new github mkdocs repo and copy this s
 - At the bottom of each Markdown file, you send some information to javascript in a single line telling it what you want.  It can be broken into multiple lines if you like that.
   - An example from the index.md, which simply gets peoples emails for future slides is:
 ``` <div id="slide-config" data-type="start" data-next="../disastermandate/"> </div> ```
-
+- ** Important: You need to tell it the name of your next slide in that line **
+  - That means you have to put the slide order both in mkdocs.yml and one at a time in the '<div' part of the md file.
 Type 1: Kobo Form Slide
 
 Displays a KoboToolbox form. It automatically prefills the user's email (if captured previously) and handles the redirect upon submission.
