@@ -156,6 +156,15 @@ Thanks!
 ### Helpful Markdown
 Other helpful markdown that works in this environment:
 
+-Link:
+ - Simplest: just put link as text ``` http://https://dosgoodcu.github.io/whatsthepointgameinteractive ```
+ - Standard (note that this works for local figures):
+     ```[View the Niger demo dashboard](https://iridl.ldeo.columbia.edu/fbfmaproom2/niger_demo)```
+ - Mkdocs pop out to new tab:
+     ```<a href="https://iridl.ldeo.columbia.edu/fbfmaproom2/niger_demo" target="_blank">
+      View the Niger demo dashboard
+     </a>```
+
 -Simplest figure:
 ```![](hat_gum.png)```
 
