@@ -161,9 +161,11 @@ Other helpful markdown that works in this environment:
  - Standard (note that this works for local figures):
      ```[View the Niger demo dashboard](https://iridl.ldeo.columbia.edu/fbfmaproom2/niger_demo)```
  - Mkdocs pop out to new tab:
-     ```<a href="https://iridl.ldeo.columbia.edu/fbfmaproom2/niger_demo" target="_blank">
-      View the Niger demo dashboard
-     </a>```
+     ```
+     <a href="https://iridl.ldeo.columbia.edu/fbfmaproom2/niger_demo" target="_blank">
+          View the Niger demo dashboard
+     </a>
+     ```
 
 -Simplest figure:
 ```![](hat_gum.png)```
@@ -172,12 +174,14 @@ Other helpful markdown that works in this environment:
 ```<img src="hat.jpg" alt="Hat" style="width:500px;">```
 
 -Embedded url window (eg a maptool that is active):
-```<div style="text-align: center; margin-top: 10px;">
+```
+<div style="text-align: center; margin-top: 10px;">
     <iframe id="resizableFrame"
         src="https://fist.iri.columbia.edu/publications/docs/Madagascar_AA_FLexDashboard_OND_2024_FR/"
         width="1200" height="1300"
         style="border:1px solid black; transition: all 0.3s ease;"></iframe>
-</div>```
+</div>
+```
 
 
 
