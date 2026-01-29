@@ -49,7 +49,7 @@ data-type="start"
 data-next: Path to the first real content slide.
 
 Example:
-'''
+```
 # Beginning
 Lets start!
 
@@ -57,7 +57,7 @@ Lets start!
      data-type="start" 
      data-next="../slide1/">
 </div>
-'''
+```
 ### Kobo Form Slide
 
 Displays a KoboToolbox form. It automatically prefills the user's email (if captured previously) and handles the redirect upon submission.  
