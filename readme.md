@@ -12,6 +12,13 @@ In theory, you should be able to set up a new github mkdocs repo and copy this s
 
 - There are also fancy github actions repositories that house some figures that are generated based on people`s responses for some use cases, but this documentation does not cover that.
 
+- Docs I use for mkdocs is at: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+
+- The most used mkdocs commands are (most must be done at the top folder level):
+  - push changes and publish the site externally: ``` mkdocs gh-deploy ``` 
+  - view the site in real time: ``` mkdocs serve ```
+
+
 ## Stuff inside
 
 - the docs folder has the text that people will see, with each page being a file named something.md as well as the image files that these call.
