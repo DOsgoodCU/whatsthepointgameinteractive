@@ -242,39 +242,9 @@ git branch -M main
 ```
 
 
+### Phase 3: Update Identity 
 
-You are absolutely right to question that—if they weren't there before, they are **not strictly necessary** to make the site work.
-
-You can safely omit `repo_url` and `site_url` if your goal is just to get the site up and running. However, here is exactly what happens when you leave them out, so you can decide if you want to add them later.
-
-### 1. `site_url` (Recommended, but Optional)
-
-**If you leave it out:** The site will still build and load perfectly fine.
-**Why you might add it later:**
-
-* **SEO:** It helps search engines know the "canonical" location of your pages.
-* **404 Pages:** Without a `site_url`, MkDocs cannot correctly generate links on the 404 (Page Not Found) page, so the "Back to Homepage" link might be broken if a user gets lost.
-* **Sitemap:** The `sitemap.xml` (used by Google/search engines) will not be generated correctly.
-
-**Verdict:** **Skip it for now.** It is not needed for internal or simple project sites.
-
-### 2. `repo_url` (Optional)
-
-**If you leave it out:** The site works perfectly.
-**Why you might add it later:**
-
-* **"Edit this page" Link:** If you add this, MkDocs puts a little GitHub icon and an "Edit this page" button on every page of your site. This allows users to click and go straight to the file on GitHub to suggest changes.
-
-**Verdict:** **Skip it.** Since you are making these sites for different topics (and perhaps don't want users jumping into the source code to edit things), you definitely don't need this.
-
----
-
-### Updated "Phase 3" Instructions (Simplified)
-
-Since you don't need those lines, here is the much faster Phase 3 for your workflow.
-
-**Phase 3: Update the Name (Essential)**
-You only need to change the **Name** so the browser tab doesn't say "Cogeneration-Satellite...".
+You need to change the **Name** so the browser tab doesn't say "Cogeneration-Satellite...".
 
 * **Open `mkdocs.yml**`.
 *  **Change the `site_name**` at the very top:
@@ -284,8 +254,6 @@ site_name: Biology 101  <-- Change this to your new title
 ```
 * **Save the file.**
 
-
-3. **Save** the file.
 
 ### Phase 4: Create the Repo on GitHub
 
