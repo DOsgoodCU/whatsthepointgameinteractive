@@ -275,6 +275,13 @@ git commit -m "Initial commit: Fresh MkDocs site"
 
 ```
 
+1.5 **Create a new Repo:***
+You may need to login.  Someone else needs to check and tell me, Im already good so I cant test those commands.
+
+```
+gh repo create ccsfist/whatsthepointfi --public --source=. --remote=origin --push
+```
+
 
 2. **Connect to your new GitHub repo:**
 ```bash
