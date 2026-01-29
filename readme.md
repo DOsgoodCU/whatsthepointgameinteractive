@@ -49,7 +49,8 @@ data-type="start"
 data-next: Path to the first real content slide.
 
 Example:
-'''# Beginning
+'''
+# Beginning
 Lets start!
 
 <div id="slide-config" 
