@@ -282,6 +282,10 @@ git remote add origin https://github.com/ccsfist/biology-101.git
 
 ```
 
+If you accidentaly forgot to change the name from biology-101.git to your new repo, you can fix it with this command
+```
+git remote set-url origin https://github.com/ccsfist/newreponame.git
+```
 
 3. **Push the code:**
 ```bash
