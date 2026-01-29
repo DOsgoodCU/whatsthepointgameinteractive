@@ -190,5 +190,126 @@ Other helpful markdown that works in this environment:
 </div>
 ```
 
+## How do make a similar mkdocs repo using this one
+
+Here are the updated instructions.
+
+These steps assume the **Source Code** is located at `ccsfist/whatsthepointfi` and you (logged in as **ccsfist**) want to create a brand new, independent repository (e.g., `biology-101`) based on that code.
+
+### Phase 1: Clone & Rename (Local Terminal)
+
+Download the "template" code and rename the folder to your new project name.
+
+1. **Clone the ccsfist template:**
+```bash
+git clone https://github.com/ccsfist/whatsthepointfi.git
+
+```
 
 
+2. **Rename the folder:**
+Replace `biology-101` with whatever you want your new project to be called.
+```bash
+mv whatsthepointfi biology-101
+
+```
+
+
+3. **Enter the new folder:**
+```bash
+cd biology-101
+
+```
+
+
+
+### Phase 2: Sever the Link (The "Fresh Start")
+
+You must remove the old git history so this new project doesn't try to sync back to `whatsthepointfi`.
+
+1. **Delete the old history:**
+```bash
+rm -rf .git
+
+```
+
+
+2. **Start a fresh repository:**
+```bash
+git init
+git branch -M main
+
+```
+
+
+
+### Phase 3: Update Identity (Important)
+
+You need to tell MkDocs that this is no longer the "whatsthepointfi" site.
+
+1. **Open `mkdocs.yml**` in your text editor.
+2. **Update these 3 lines:**
+```yaml
+# 1. The Title of the new site
+site_name: Biology 101 Docs
+
+# 2. The URL where the new site will live
+# Format: https://ccsfist.github.io/<new-folder-name>/
+site_url: https://ccsfist.github.io/biology-101/
+
+# 3. The link to the new code repo
+repo_url: https://github.com/ccsfist/biology-101
+
+```
+
+
+3. **Save** the file.
+
+### Phase 4: Create the Repo on GitHub
+
+1. Log in to GitHub as **ccsfist**.
+2. Click the **+** icon (top right) -> **New repository**.
+3. **Repository name:** Enter your new name (e.g., `biology-101`).
+4. **Visibility:** Public.
+5. **Initialize:** Leave **ALL** checkboxes unchecked (No README, No .gitignore).
+6. Click **Create repository**.
+
+### Phase 5: Upload & Publish
+
+Back in your terminal (inside the `biology-101` folder):
+
+1. **Commit the files:**
+```bash
+git add .
+git commit -m "Initial commit: Fresh MkDocs site"
+
+```
+
+
+2. **Connect to your new GitHub repo:**
+```bash
+git remote add origin https://github.com/ccsfist/biology-101.git
+
+```
+
+
+3. **Push the code:**
+```bash
+git push -u origin main
+
+```
+
+
+4. **Publish the Website:**
+*(This builds the HTML and pushes it to the gh-pages branch)*
+```bash
+mkdocs gh-deploy
+
+```
+
+
+
+**Done!**
+
+* **Code:** `https://github.com/ccsfist/biology-101`
+* **Website:** `https://ccsfist.github.io/biology-101` (Give it 2 minutes to appear).
