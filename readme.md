@@ -1,3 +1,46 @@
+# To run DESDR slider update for insurepeopleinteractive
+```cd ~/ICCGS25/DESDR_files```
+
+```python StudentSlidersDownload.py``` downloads the most recent village saved by the students in the ../students.csv file by email
+
+```python SummarizeEarlyWindow.py``` generates a figure for each student with data illustrating the first window sliders, and the size of payouts in key years in file early_window_summary.png
+
+```./deploy_analysis.sh``` moves the early_window_summary.png to docs in the repo insurepeopleinteractive so that it can be used in that markdown.
+
+# To run noki game update for insurepeopleinteractive
+```cd ~/noki_genete_process```
+
+## command line for class
+python downloadGenete.py
+python processGenete.py --today
+./deploy_analysis.sh
+
+## python downloadGenete.py
+Run this first.Hardcoded to download the instance that has the start word Genete, saves to  NokiGeneteOutput.csv
+
+## python processGenete.py
+Takes NokiGeneteOutput.csv and creates genete_results.html
+  - reports raw preference between 2002 and 1984
+  - reports how many people were right that 2009 was a bad year and 2010 was not
+  - filters answers for only people that got 2009 right and makes an updated plot
+
+Available Options:
+  --start-date YYYY-MM-DD   (Example: --start-date 2025-01-01)
+  --end-date YYYY-MM-DD     (Example: --end-date 2025-12-31)
+  --today                   (Example: --today)
+  --all-responses           (Example: --all-responses) (instead of only most recent response)
+  Defaults: all time, only most recent response
+
+  **for  class, run: python processGenete.py --today**
+  **for demo use, python processGenete.py --all-responses** because not enough responses for meaningful analysis (yet)
+
+## ./deploy_analysis.sh
+Put analysis results, the complete file genete_results.html in the insurepeopleinteractive repo and push to github, once updated
+
+
+
+
+
 # Slide Instructions
 
 This project uses mkdocs, kobo, and some javascript to make an educational or project decision workflow where output is saved in kobo.  It uses a simplified "Configuration Div" system to handle slide logic (forms, redirects, images, and email persistence). Instead of writing complex HTML/JS in every slide, you simply place one configuration line at the bottom of your whatever.md file in docs.
