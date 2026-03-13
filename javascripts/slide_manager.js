@@ -11,6 +11,9 @@ if (window.self !== window.top) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // FIX: Force page to start at the very top on load to prevent auto-centering on iframes
+    window.scrollTo(0, 0);
+
     const config = document.getElementById('slide-config');
     
     // If no config div is found, do nothing
@@ -96,13 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- TYPE SPECIFIC LOGIC ---
 
-    // TYPE 4: Initial Slide (Ask for Email)
+    // TYPE 4: Initial Slide (Email Optional)
     if (type === 'start') {
         const existingEmail = getEmail();
         
         container.innerHTML = `
             <div class="input-group">
-                <input type="email" id="user-email" placeholder="Enter your email" value="${existingEmail}" required />
+                <input type="email" id="user-email" placeholder="Enter your email (optional)" value="${existingEmail}" />
                 <button id="start-btn" class="nav-btn">Start Session</button>
             </div>
         `;
@@ -111,12 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (startBtn) {
             startBtn.addEventListener('click', () => {
                 const emailInput = document.getElementById('user-email').value;
-                if (emailInput) {
-                    saveEmail(emailInput);
-                    goToNext(nextUrl); // Use fixed URL
-                } else {
-                    alert("Please enter a valid email address.");
-                }
+                // FIX: Proceeding without requiring email input
+                saveEmail(emailInput);
+                goToNext(nextUrl); 
             });
         }
     }
